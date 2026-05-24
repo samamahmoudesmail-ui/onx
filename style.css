@@ -1,0 +1,321 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  background:linear-gradient(
+    -45deg,
+    #f5f7fb,
+    #e0e7ff,
+    #ede9fe,
+    #f5f7fb
+  );
+
+  background-size:400% 400%;
+
+  animation:bgAnimation 12s ease infinite;
+}
+
+@keyframes bgAnimation{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 8%;
+  background:white;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+}
+.actions{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+.login-btn{
+  text-decoration:none;
+  background:#6c63ff;
+  color:white;
+  padding:10px 18px;
+  border-radius:10px;
+}
+.hero{
+  padding:80px 8%;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:56px;
+  margin-bottom:20px;
+}
+.products{
+  padding:50px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.card img{
+  width:100%;
+  border-radius:16px;
+  margin-bottom:15px;
+}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.card img{
+  width:100%;
+  border-radius:16px;
+  margin-bottom:15px;
+}
+
+
+.login-container,
+.checkout{
+  width:400px;
+  margin:100px auto;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+}
+input,
+select{
+  width:100%;
+  padding:14px;
+  margin:15px 0;
+  border:1px solid #ddd;
+  border-radius:0px;
+}
+.card{
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.2);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+button{
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+#loader{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.spinner{
+  width:60px;
+  height:60px;
+  border:6px solid #ddd;
+  border-top:6px solid #6c63ff;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.dark{
+  background:#0f172a;
+  color:white;
+}
+
+.dark header,
+.dark .card,
+.dark .review-card{
+  background:#1e293b;
+  color:white;
+}
+.reviews{
+  padding:80px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+}
+
+.review-card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+.card{
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+.cursor-glow{
+  position:fixed;
+  width:300px;
+  height:300px;
+  background:#6c63ff55;
+  border-radius:50%;
+  filter:blur(100px);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+html{
+  scroll-behavior:smooth;
+}
+button{
+  position:relative;
+  overflow:hidden;
+}
+
+button::before{
+
+  content:'';
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  background:rgba(255,255,255,.2);
+
+  top:-100px;
+  left:-300px;
+
+  transform:rotate(45deg);
+
+  transition:.7s;
+
+}
+
+button:hover::before{
+  left:100%;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  backdrop-filter:blur(10px);
+}
+.hero h1{
+
+  background:linear-gradient(
+    to right,
+    #6c63ff,
+    #8b5cf6
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+}
+
+.card{
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.05),
+  0 0 80px rgba(108,99,255,.15);
+}
+.dark{
+  background:#020617;
+  color:white;
+}
+
+.dark header{
+  background:#0f172a;
+}
+
+.dark .card,
+.dark .review-card,
+.dark .login-container,
+.dark .checkout{
+  background:#111827;
+  color:white;
+}
+
+.dark input,
+.dark select{
+  background:#1e293b;
+  color:white;
+  border:1px solid #334155;
+}
+
+.dark p,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark a{
+  color:white;
+}
+.checkout{
+  width:450px;
+  margin:100px auto;
+  background:white;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.checkout h1{
+  margin-bottom:20px;
+}
+
+.checkout-price{
+  font-size:28px;
+  margin-bottom:25px;
+  color:#6c63ff;
+}
